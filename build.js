@@ -2,7 +2,7 @@ const fs = require('fs');
 const path = require('path');
 
 const API_URL = process.env.WP_API_URL || 'https://minwordpress-295.rostiapp.cz';
-const DIST_DIR = path.join(__dirname, 'dist');
+const DIST_DIR = path.join(__dirname, 'www');
 const CACHE_FILE = path.join(__dirname, 'cache.json');
 const ENCODING = 'utf8';
 
