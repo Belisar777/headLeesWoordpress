@@ -1,0 +1,29 @@
+name: Deploy
+on:
+  repository_dispatch:
+    types: [webhook_deploy]
+  workflow_dispatch:
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      
+      - name: Build Web
+        run: node build.js
+        env:
+          WP_API_URL: ${{ secrets.WP_API_URL }}
+
+      # Místo git push použijeme oficiální Action pro nahrání složky dist
+      - name: Upload Pages Artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: ./www
+
+      - name: Deploy to GitHub Pages
+        uses: actions/deploy-pages@v4
