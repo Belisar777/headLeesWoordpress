@@ -1,7 +1,8 @@
 const fs = require('fs');
 const path = require('path');
 
-const API_URL = process.env.WP_API_URL || 'https://minwordpress-295.rostiapp.cz';
+const API_URL = 'https://minwordpress-295.rostiapp.cz';
+// const API_URL = process.env.WP_API_URL || 'https://minwordpress-295.rostiapp.cz';
 const DIST_DIR = path.join(__dirname, 'www');
 const CACHE_FILE = path.join(__dirname, 'cache.json');
 const ENCODING = 'utf8';
@@ -32,7 +33,5 @@ async function buildWeb() {
   });
   fs.writeFileSync(CACHE_FILE, JSON.stringify(newCache, null, 2), ENCODING);
 }
-console.log("ENV API:" + process.env.WP_API_URL);
-console.log("API_URL:" + API_URL);
 
 buildWeb();
