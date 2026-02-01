@@ -32,4 +32,8 @@ async function buildWeb() {
   });
   fs.writeFileSync(CACHE_FILE, JSON.stringify(newCache, null, 2), ENCODING);
 }
+console.log("ENV API:" + process.env.WP_API_URL);
+
+console.log("API_URL" + API_URL);
+
 buildWeb();
