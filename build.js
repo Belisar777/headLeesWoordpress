@@ -34,4 +34,7 @@ async function buildWeb() {
   fs.writeFileSync(CACHE_FILE, JSON.stringify(newCache, null, 2), ENCODING);
 }
 
+console.log(DIST_DIR);
+
+
 buildWeb();
