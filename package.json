@@ -1,0 +1,20 @@
+{
+  "name": "headleeswoordpress",
+  "version": "1.0.0",
+  "description": "Demo pro automatickou publikaci stránek z wordpressu",
+  "homepage": "https://github.com/Belisar777/headLeesWoordpress#readme",
+  "bugs": {
+    "url": "https://github.com/Belisar777/headLeesWoordpress/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Belisar777/headLeesWoordpress.git"
+  },
+  "license": "ISC",
+  "author": "Ing. Stanislav Šec",
+  "type": "commonjs",
+  "main": "build.js",
+  "scripts": {
+    "start": "node --env-file=.env build.js"
+  }
+}
